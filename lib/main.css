@@ -1,0 +1,36 @@
+button {
+  height: 40px;
+  width: 130px;
+  border-radius: 10px;
+  background-color: #ffec19;
+  font-weight: 700;
+  font-size: 12px;
+  outline: none;
+  border: 1px solid black;
+
+}
+button:hover {
+  background-color: #dbcb18;
+}
+
+.buttons {
+  display: flex;
+  width: 1000px;
+  justify-content: space-between;
+}
+
+.blueButton {
+  background-color: lightblue;
+}
+
+.blueButton:hover {
+  background-color: blue;
+}
+
+.greenButton {
+  background-color: lightgreen;
+}
+
+.greenButton:hover {
+  background-color: green;
+}
