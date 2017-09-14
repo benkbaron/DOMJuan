@@ -2,8 +2,8 @@
 
 ## DOMJuan is a JavaScript DOM interaction library inspired by jQuery.
 
-### 'On' and 'Off'
-Adding and removing event listeners using 'on' and 'off' make use of four helper methods to keep methods DRY.
+### 'on' and 'off'
+Adds and removes event listeners to elements using 'on' and 'off' making use of four helper methods to keep methods DRY.
 
 ```javascript
   on(eventName, cb){
@@ -46,7 +46,7 @@ Adding and removing event listeners using 'on' and 'off' make use of four helper
   static resetEvents(el, eventName) {
     DOMNodeCollection.getEvents(el)[eventName] = [];
   }
-  ```
+```
 
 
   ### 'attr', 'addClass', 'removeClass'
@@ -54,7 +54,7 @@ Adding and removing event listeners using 'on' and 'off' make use of four helper
 
   'addClass' and 'removeClass' adds or removes the provided newClass name to the DOM Node.
 
-  ```javascript
+```javascript
   attr(str, value){
     if (value) {
       this.htmlArr[0].setAttribute(str, value);
@@ -73,9 +73,9 @@ Adding and removing event listeners using 'on' and 'off' make use of four helper
       el.classList.remove(rmClass);
     });
   }
-    ```
-  Examples
-  ```javascript
+```
+  ## Examples:
+```javascript
   $DJ(".counterButton").on("click", () => {
     let val = $DJ("button.counterButton").attr("value");
     val = $DJ("button.counterButton").attr("value", parseInt(val) + 1);
@@ -86,4 +86,4 @@ Adding and removing event listeners using 'on' and 'off' make use of four helper
     $DJ("body").removeClass("lightgreen");
     $DJ("body").addClass("lightblue");
   });
-  ```
+```
