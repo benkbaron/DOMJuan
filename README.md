@@ -87,3 +87,34 @@ Adds and removes event listeners to elements using 'on' and 'off' making use of 
     $DJ("body").addClass("lightblue");
   });
 ```
+
+###The window.$DJ provides the core functionality for DOMJuan. This function behaves differently depending upon the datatype passed in as an argument. If the argument is an HTMLElement, it will convert it to a DOMNodeCollection. For a string argument, it will query the document for all the elements of the same name and return a DOMNodeCollection of the elements. Functions that are passed in will be executed immediately if the document has loaded, otherwise they are placed in queue, funcArr, and executed once the document has finished loading.
+
+```javascript
+  const funcArr = [];
+
+  window.$DJ = function(ele){
+    if (ele instanceof HTMLElement){
+      ele = Array.from(ele);
+      let domEl = new DOMNodeCollection(ele);
+      return domEl;
+
+    } else if (typeof ele === 'string'){
+      let eles = document.querySelectorAll(ele);
+      eles = Array.from(eles);
+      let domEl = new DOMNodeCollection(eles);
+      return domEl;
+
+    } else if (typeof ele === 'function'){
+        if (document.readyState === "complete"){
+          ele();
+        } else {
+        funcArr.push(ele);
+        }
+      }
+  };
+
+  document.addEventListener("DOMContentLoaded", function(){
+    funcArr.forEach((fn) => fn());
+  });
+```
