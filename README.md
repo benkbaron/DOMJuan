@@ -74,3 +74,16 @@ Adding and removing event listeners using 'on' and 'off' make use of four helper
     });
   }
     ```
+  Examples
+  ```javascript
+  $DJ(".counterButton").on("click", () => {
+    let val = $DJ("button.counterButton").attr("value");
+    val = $DJ("button.counterButton").attr("value", parseInt(val) + 1);
+    $DJ(".numberList").append(`<li class="numberItem">${val}</li>`);
+  });
+
+  $DJ(".blueButton").on("click", () => {
+    $DJ("body").removeClass("lightgreen");
+    $DJ("body").addClass("lightblue");
+  });
+  ```
