@@ -13,8 +13,8 @@
 /tmp
 
 node_modules/
-/lib/bundle.js
-/lib/bundle.js.map
+bundle.js
+bundle.js.map
 
 bundle.js*
 
