@@ -120,7 +120,7 @@ The window.$DJ provides the core functionality for DOMJuan. This function behave
   });
 ```
 ### '$DJ.ajax'
-This creates ajax requests with default values in an options hash.
+This creates requests for and to update data on servers. This method provides default values in an options hash.
 
 ```javascript
 
@@ -147,4 +147,22 @@ $DJ.ajax = (options) => {
    };
    xhr.send(mergedOptions.data);
  };
+ ```
+  ## Example $DJ.ajax:
+
+```javascript
+  fetchDog = () => {
+    $DJ.ajax({
+      method: "GET",
+      url: "http://api.giphy.com/v1/gifs/search?q=dogs&api_key=598f7eb547fd42a38df8d56fc9934a64",
+      success(data){ showDog(data);},
+      error: () => alert("Error in fetching dog. Sorry."),
+  });
+  };
+
+  showDog = (data) => {
+    let num = Math.round(Math.random() * 25);
+    let url = data.data[num].images.fixed_width.url;
+    $DJ(".giphyList").append(`<li class="giphyItem"><img src=${url}></li>`);
+  };
  ```
