@@ -1,6 +1,6 @@
 # DOMJuan
 
-## DOMJuan is a JavaScript DOM interaction library inspired by jQuery.
+### DOMJuan is a JavaScript DOM interactive library inspired by jQuery. DOMJuan enables event handling, AJAX requests, and DOM manipulation.
 
 ### 'on' and 'off'
 Adds and removes event listeners to elements using 'on' and 'off' making use of four helper methods to keep methods DRY.
