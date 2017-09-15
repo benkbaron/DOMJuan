@@ -75,6 +75,7 @@ Adds and removes event listeners to elements using 'on' and 'off' making use of 
   }
 ```
   ## Examples:
+
 ```javascript
   $DJ(".counterButton").on("click", () => {
     let val = $DJ("button.counterButton").attr("value");
@@ -88,7 +89,7 @@ Adds and removes event listeners to elements using 'on' and 'off' making use of 
   });
 ```
 
-###The window.$DJ provides the core functionality for DOMJuan. This function behaves differently depending upon the datatype passed in as an argument. If the argument is an HTMLElement, it will convert it to a DOMNodeCollection. For a string argument, it will query the document for all the elements of the same name and return a DOMNodeCollection of the elements. Functions that are passed in will be executed immediately if the document has loaded, otherwise they are placed in queue, funcArr, and executed once the document has finished loading.
+The window.$DJ provides the core functionality for DOMJuan. This function behaves differently depending upon the datatype passed in as an argument. If the argument is an HTMLElement, it will convert it to a DOMNodeCollection. For a string argument, it will query the document for all the elements of the same name and return a DOMNodeCollection of the elements. Functions that are passed in will be executed immediately if the document has loaded, otherwise they are placed in queue, funcArr, and executed once the document has finished loading.
 
 ```javascript
   const funcArr = [];
