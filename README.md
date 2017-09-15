@@ -119,3 +119,32 @@ The window.$DJ provides the core functionality for DOMJuan. This function behave
     funcArr.forEach((fn) => fn());
   });
 ```
+### '$DJ.ajax'
+This creates ajax requests with default values in an options hash.
+
+```javascript
+
+$DJ.ajax = (options) => {
+
+  const defaultOptions = {
+    method: "",
+    url: "",
+    data: {},
+    contentType: "application/x-www-form-urlencoded; charset=utf-8",
+    success: () => {},
+    error: () => {},
+  };
+  let mergedOptions = $DJ.extend(defaultOptions, options);
+
+   const xhr = new XMLHttpRequest();
+   xhr.open(mergedOptions.method, mergedOptions.url);
+   xhr.onload = function () {
+     if (xhr.status === 200) {
+       mergedOptions.success(JSON.parse(xhr.response));
+     } else {
+       mergedOptions.error(JSON.parse(xhr.response));
+     }
+   };
+   xhr.send(mergedOptions.data);
+ };
+ ```
