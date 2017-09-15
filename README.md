@@ -74,7 +74,7 @@ Adds and removes event listeners to elements using 'on' and 'off' making use of 
     });
   }
 ```
-  ## Examples:
+  ### Examples:
 
 ```javascript
   $DJ(".counterButton").on("click", () => {
@@ -148,7 +148,7 @@ $DJ.ajax = (options) => {
    xhr.send(mergedOptions.data);
  };
  ```
-  ## Example $DJ.ajax:
+  ### Example $DJ.ajax:
 
 ```javascript
   fetchDog = () => {
