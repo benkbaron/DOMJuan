@@ -16,8 +16,19 @@ $DJ(() => {
   $DJ(".counterButton").on("click", () => {
     let val = $DJ("button.counterButton").attr("value");
     val = $DJ("button.counterButton").attr("value", parseInt(val) + 1);
-    $DJ(".numberList").append(`<li class="numberItem">${val}</li>`);
+    $DJ(".numberList").append(`<li class="numberItem" value=${val}>${val}</li>`);
   });
+
+  $DJ(".addFive").on("click", () => {
+    let numbers = $DJ(".numberList").children().htmlArr;
+      for (let i = 1; i < numbers.length; i++) {
+      numbers[i].value += 5;
+      numbers[i].innerHTML = numbers[i].value;
+    }
+  });
+
+
+
 
   $DJ(".giphyButton").on("click", fetchDog);
 
