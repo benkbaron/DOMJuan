@@ -167,4 +167,27 @@ $DJ.ajax = (options) => {
     let url = data.data[num].images.fixed_width.url;
     $DJ(".giphyList").append(`<li class="giphyItem"><img src=${url}></li>`);
   };
- ```
+```
+ ### 'children' and 'parents'
+ Returns all the children or unique parents as a DOMNodeCollection for each node in the collection it is called on.
+
+```javascript
+   children(){
+     let allChildren = [];
+     this.each(function(el){
+       let childArr = Array.from(el.childNodes);
+       allChildren = allChildren.concat(childArr);
+     });
+     return new DOMNodeCollection(allChildren);
+   }
+
+   parents(){
+     let allParents = [];
+     this.each(function(el){
+       if(!allParents.includes(el.parentNode)){
+         allParents.push(el.parentNode);
+       }
+     });
+     return new DOMNodeCollection(allParents);
+   }
+```
