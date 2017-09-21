@@ -27,9 +27,6 @@ $DJ(() => {
     }
   });
 
-
-
-
   $DJ(".giphyButton").on("click", fetchDog);
 
   $DJ(".remove-events").on("click", removeElements);
